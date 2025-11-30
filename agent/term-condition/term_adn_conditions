@@ -1,0 +1,20 @@
+# Terms and Conditions
+## Definition
+
+Before participating in any activity, the user must accept the Terms and Conditions.
+
+## Rules
+
+- Users who do not accept the Terms and Conditions cannot participate.
+
+- Administrators can update the Terms and Conditions at any time.
+
+- The Terms and Conditions are stored in a database table, and the most recent record is displayed to the user.
+
+## Note
+
+- This feature has now been implemented. Please verify that it is functioning as expected.
+
+## Additional Note
+
+- Ensure type safety, avoid production errors, follow best practices, and review the complete README.

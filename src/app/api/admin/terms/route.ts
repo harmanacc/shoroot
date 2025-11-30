@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 import { termsAndConditions } from "@/lib/db/schema";
-import { eq } from "drizzle-orm";
+import { eq, desc } from "drizzle-orm";
 import { authMiddleware } from "@/lib/auth/middleware";
 
 export async function GET(request: NextRequest) {
@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
       .select()
       .from(termsAndConditions)
       .limit(1)
-      .orderBy(termsAndConditions.updatedAt);
+      .orderBy(desc(termsAndConditions.updatedAt));
 
     if (terms.length === 0) {
       return NextResponse.json({ error: "No terms found" }, { status: 404 });

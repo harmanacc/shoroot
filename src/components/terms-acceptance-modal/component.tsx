@@ -12,16 +12,6 @@ import {
 } from "@/components/ui/dialog";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
-// Create a simple scroll area if not available
-const SimpleScrollArea: React.FC<{ className?: string; children: React.ReactNode }> = ({
-  className,
-  children
-}) => (
-  <div className={`overflow-auto ${className}`}>
-    {children}
-  </div>
-);
 import { FileText, Loader2 } from "lucide-react";
 
 interface TermsAcceptanceModalProps {
@@ -74,13 +64,13 @@ export function TermsAcceptanceModal({
         </DialogHeader>
 
         <div className="flex-1 min-h-0">
-          <SimpleScrollArea className="h-[400px] w-full border rounded-lg p-4 bg-muted/30">
+          <ScrollArea className="h-[400px] w-full border rounded-lg p-4 bg-muted/30">
             <div className="prose prose-sm dark:prose-invert max-w-none">
               <pre className="whitespace-pre-wrap text-sm leading-relaxed font-sans">
                 {termsContent}
               </pre>
             </div>
-          </SimpleScrollArea>
+          </ScrollArea>
         </div>
 
         <DialogFooter className="flex-shrink-0 flex-col gap-4">
